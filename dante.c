@@ -152,6 +152,9 @@ int main(void)
         exit(EXIT_FAILURE);
 
     int prevAts = 0;
+    printf("#define stampa printf\n");
+    printf("#include <stdio.h>\n");
+    printf("#include <stdlib.h>\n");
     while ((read = getline(&line, &len, fp)) != -1)
     {
 
@@ -180,17 +183,29 @@ int main(void)
                     addSemicolon = 0;
                     newstr = replace(newstr, "principale", "int main()");
                 }
-                newstr = replace(newstr, "intero", "int");
                 if (strstr(newstr, "finchè ") != NULL)
                 {
                     addSemicolon = 0;
                     newstr = replace(newstr, "finchè", "while(");
                     strcat(strstrip(newstr), " )\n");
                 }
-                for(int i=0;i<strlen(newstr);i++){
-                    if(newstr[i]!='@') printf("%c",newstr[i]);
+                if (strstr(newstr, "funzione") != NULL)
+                {
+                    addSemicolon = 0;
+                    char **partsAB = str_split(line, ')');
+                    *(partsAB + 1) = replace(*(partsAB + 1), "restituisce", "");
+                    *(partsAB + 1) = replace(*(partsAB + 1), "intero", "int");
+                    printf("%s", *(partsAB + 1));
+                    newstr = strcat(*(partsAB + 0), ")");
+                    newstr = replace(newstr, "funzione", "");
                 }
-                //printf("%s", strstrip(newstr));
+                newstr = replace(newstr, "intero", "int");
+                newstr = replace(newstr, "funzione", "int");
+                for (int i = 0; i < strlen(newstr); i++)
+                {
+                    if (newstr[i] != '@')
+                        printf("%c", newstr[i]);
+                }
             }
             else
             {
@@ -210,7 +225,10 @@ int main(void)
         */
         fprintf(fo, "%s", line);
     }
-
+    for (int i = 0; i < prevAts; i++)
+    {
+        printf("}\n");
+    }
     fclose(fp);
     if (line)
         free(line);

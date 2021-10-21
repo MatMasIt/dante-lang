@@ -1,9 +1,22 @@
-funzione somma(intero a,intero b)  restituisce intero
-@   stampa(@	restituisci a+b
+#define stampa printf
+#include <stdio.h>
+#include <stdlib.h>
+   int
+ somma(int a,int b)
+{   return a+b
+;
+}
 
 
-principale
-@   intero a = 0
-@   finchè a < 10
-@   @   stampa(@   @   a++
 
+int main()
+
+{   int a = 0
+;
+   while( a < 10 )
+
+{      stampa("%d\n",somma(a,1))
+;
+      a++;
+}
+}
