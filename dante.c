@@ -199,8 +199,18 @@ int main(void)
                     newstr = strcat(*(partsAB + 0), ")");
                     newstr = replace(newstr, "funzione", "");
                 }
+                if (strstr(newstr, "struttura") != NULL)
+                {
+                    addSemicolon = 0;
+                }
                 newstr = replace(newstr, "intero", "int");
-                newstr = replace(newstr, "funzione", "int");
+                newstr = replace(newstr, "decimale", "double");
+                newstr = replace(newstr, "testo", "char * ");
+                newstr = replace(newstr, "carattere", "char");
+                newstr = replace(newstr, "struttura", "typedef struct");
+                newstr = replace(newstr, "importa", "#include");
+                newstr = replace(newstr, "definisci", "#define");
+                newstr = replace(newstr, "funzione", "");
                 for (int i = 0; i < strlen(newstr); i++)
                 {
                     if (newstr[i] != '@')

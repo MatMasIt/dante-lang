@@ -1,6 +1,10 @@
 funzione somma(intero a,intero b)  restituisce intero
 @   restituisci a+b
 
+struttura
+@ intero x,
+@ intero y
+punto2d
 
 principale
 @   intero a = 0
