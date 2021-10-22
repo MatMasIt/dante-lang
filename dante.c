@@ -198,13 +198,13 @@ int main(void)
                 if (strstr(newstr, "altrimenti ") != NULL)
                 {
                     addSemicolon = 0;
-                    newstr = replace(newstr, "altrimenti ", "else if");
+                    newstr = replace(newstr, "altrimenti ", "else if(");
                     strcat(strstrip(newstr), " )\n");
                 }
                 if (strstr(newstr, "infine ") != NULL)
                 {
                     addSemicolon = 0;
-                    newstr = replace(newstr, "infine", "else");
+                    newstr = replace(newstr, "infine", "else(");
                     strcat(strstrip(newstr), " )\n");
                 }
                 if (strstr(newstr, "funzione") != NULL)
