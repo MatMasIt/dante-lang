@@ -11,6 +11,7 @@ char *replace(
     size_t const patlen = strlen(pattern);
     size_t const orilen = strlen(original);
 
+
     size_t patcnt = 0;
     const char *oriptr;
     const char *patloc;
@@ -155,6 +156,7 @@ int main(void)
     printf("#define stampa printf\n");
     printf("#include <stdio.h>\n");
     printf("#include <stdlib.h>\n");
+    printf("\n#define min fmin\n#define max fmax\n");
     while ((read = getline(&line, &len, fp)) != -1)
     {
 
@@ -213,6 +215,9 @@ int main(void)
                     char **partsAB = str_split(line, ')');
                     *(partsAB + 1) = replace(*(partsAB + 1), "restituisce", "");
                     *(partsAB + 1) = replace(*(partsAB + 1), "intero", "int");
+                    *(partsAB + 1) = replace(*(partsAB + 1), "decimale", "int");
+                    *(partsAB + 1) = replace(*(partsAB + 1), "testo", "char * ");
+                    *(partsAB + 1) = replace(*(partsAB + 1), "carattere", "char");
                     printf("%s", *(partsAB + 1));
                     newstr = strcat(*(partsAB + 0), ")");
                     newstr = replace(newstr, "funzione", "");

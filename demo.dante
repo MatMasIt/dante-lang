@@ -1,13 +1,32 @@
-funzione somma(intero a,intero b)  restituisce intero
-@   restituisci a+b
+importa <math.h>
 
 struttura
-@ intero x,
-@ intero y
-punto2d
+@	decimale x
+@	decimale y
+@	decimale z
+punto
 
+funzione distanza(punto a, punto b)  restituisce decimale
+@	decimale x_inferiore, y_inferiore, z_inferiore
+@	decimale x_superiore, y_superiore, z_superiore
+@	decimale d_x, d_y, d_z
+@	x_inferiore = min(a.x,b.x)
+@	y_inferiore = min(a.y,b.y)
+@	z_inferiore = min(a.z,b.z)
+@	x_superiore = max(a.x,b.y)
+@	y_superiore = max(a.y,b.y)
+@	z_superiore = max(a.z,b.z)
+@	d_x = x_superiore - x_inferiore
+@	d_y = y_superiore - y_inferiore
+@	d_z = z_superiore - y_inferiore
+@	return sqrt(pow(d_x, 2)+pow(d_y, 2)+pow(d_z, 2))
 principale
-@   intero a = 0
-@   finchè a < 10
-@   @   stampa("%d\n",somma(a,1))
-@   @   a++
+@	punto a,b
+@	a.x = 2
+@	a.y = 1
+@	a.z = 3
+@	b.x = 5
+@	b.y = 10
+@	b.z = 7
+@	decimale dist = distanza(a,b)
+@	stampa("%d",dist)
