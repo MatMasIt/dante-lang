@@ -189,6 +189,24 @@ int main(void)
                     newstr = replace(newstr, "finchè", "while(");
                     strcat(strstrip(newstr), " )\n");
                 }
+                if (strstr(newstr, "se ") != NULL)
+                {
+                    addSemicolon = 0;
+                    newstr = replace(newstr, "se ", "if(");
+                    strcat(strstrip(newstr), " )\n");
+                }
+                if (strstr(newstr, "altrimenti ") != NULL)
+                {
+                    addSemicolon = 0;
+                    newstr = replace(newstr, "altrimenti ", "else if");
+                    strcat(strstrip(newstr), " )\n");
+                }
+                if (strstr(newstr, "infine ") != NULL)
+                {
+                    addSemicolon = 0;
+                    newstr = replace(newstr, "infine", "else");
+                    strcat(strstrip(newstr), " )\n");
+                }
                 if (strstr(newstr, "funzione") != NULL)
                 {
                     addSemicolon = 0;
@@ -211,6 +229,9 @@ int main(void)
                 newstr = replace(newstr, "importa", "#include");
                 newstr = replace(newstr, "definisci", "#define");
                 newstr = replace(newstr, "funzione", "");
+                newstr = replace(newstr, " o ", " || ");
+                newstr = replace(newstr, " e ", " && ");
+                newstr = replace(newstr, "non ", "!");
                 for (int i = 0; i < strlen(newstr); i++)
                 {
                     if (newstr[i] != '@')
@@ -227,12 +248,7 @@ int main(void)
             printf(";");
         printf("\n");
 
-        /*
-        printf("%s",replace(line, "intero", "int"));
-        strcpy(line,replace(line, "decimale", "double"));
-        strcpy(line,replace(line, "testo", "char * "));
-        strcpy(line,replace(line, "funzione", ""));
-        */
+        
         fprintf(fo, "%s", line);
     }
     for (int i = 0; i < prevAts; i++)
