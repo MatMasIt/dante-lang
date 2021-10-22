@@ -11,7 +11,6 @@ char *replace(
     size_t const patlen = strlen(pattern);
     size_t const orilen = strlen(original);
 
-
     size_t patcnt = 0;
     const char *oriptr;
     const char *patloc;
@@ -156,7 +155,7 @@ int main(void)
     printf("#define stampa printf\n");
     printf("#include <stdio.h>\n");
     printf("#include <stdlib.h>\n");
-    printf("\n#define min fmin\n#define max fmax\n");
+    printf("#define max(x, y) (((x) > (y)) ? (x) : (y))\n#define min(x, y) (((x) < (y)) ? (x) : (y))\n");
     while ((read = getline(&line, &len, fp)) != -1)
     {
 
@@ -231,6 +230,10 @@ int main(void)
                 newstr = replace(newstr, "testo", "char * ");
                 newstr = replace(newstr, "carattere", "char");
                 newstr = replace(newstr, "struttura", "typedef struct");
+                if (strstr(newstr, "importa") != NULL)
+                {
+                    addSemicolon = 0;
+                }
                 newstr = replace(newstr, "importa", "#include");
                 newstr = replace(newstr, "definisci", "#define");
                 newstr = replace(newstr, "funzione", "");
@@ -253,7 +256,6 @@ int main(void)
             printf(";");
         printf("\n");
 
-        
         fprintf(fo, "%s", line);
     }
     for (int i = 0; i < prevAts; i++)

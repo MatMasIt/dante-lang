@@ -1,9 +1,8 @@
 #define stampa printf
 #include <stdio.h>
 #include <stdlib.h>
-
-#define min fmin
-#define max fmax
+#define max(x, y) (((x) > (y)) ? (x) : (y))
+#define min(x, y) (((x) < (y)) ? (x) : (y))
 #include <math.h>
 
 
@@ -66,6 +65,10 @@ typedef struct
 ;
 	double dist = distanza(a,b)
 ;
-	stampa("%d",dist)
+   stampa("A=(%f,%f,%f)\n",a.x,a.y,a.z)
+;
+   stampa("B=(%f,%f,%f)\n",b.x,b.y,b.z)
+;
+	stampa("Distanza : %f\n",dist)
 ;
 }

@@ -1,0 +1,25 @@
+{
+    "name": "dante",
+    "displayName": "Dante",
+    "description": "Dante Programming Language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "dante",
+            "aliases": ["Dante", "dante"],
+            "extensions": [".dante"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "dante",
+            "scopeName": "source.dante",
+            "path": "./syntaxes/dante.tmLanguage.json"
+        }]
+    }
+}

@@ -29,4 +29,6 @@ principale
 @	b.y = 10
 @	b.z = 7
 @	decimale dist = distanza(a,b)
-@	stampa("%d",dist)
+@   stampa("A=(%f,%f,%f)\n",a.x,a.y,a.z)
+@   stampa("B=(%f,%f,%f)\n",b.x,b.y,b.z)
+@	stampa("Distanza : %f\n",dist)
