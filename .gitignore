@@ -1,2 +1,2 @@
-a.out
-out.c
+node_modules
+*.vsix
