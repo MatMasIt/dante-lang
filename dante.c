@@ -153,6 +153,10 @@ int main(void)
 
     int prevAts = 0;
     printf("#define stampa printf\n");
+    printf("#define leggi scanf");
+    printf("#define fopen apriFile")
+    printf("#define file FILE*");
+    printf("#define fscanf leggiFile");
     printf("#include <stdio.h>\n");
     printf("#include <stdlib.h>\n");
     printf("#define max(x, y) (((x) > (y)) ? (x) : (y))\n#define min(x, y) (((x) < (y)) ? (x) : (y))\n");

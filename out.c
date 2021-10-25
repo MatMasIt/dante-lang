@@ -47,7 +47,9 @@ typedef struct
 ;
 	return sqrt(pow(d_x, 2)+pow(d_y, 2)+pow(d_z, 2))
 ;
-}int main()
+}
+
+int main()
 
 {	punto a,b
 ;
@@ -65,9 +67,9 @@ typedef struct
 ;
 	double dist = distanza(a,b)
 ;
-   stampa("A=(%f,%f,%f)\n",a.x,a.y,a.z)
+	stampa("A=(%f,%f,%f)\n",a.x,a.y,a.z)
 ;
-   stampa("B=(%f,%f,%f)\n",b.x,b.y,b.z)
+	stampa("B=(%f,%f,%f)\n",b.x,b.y,b.z)
 ;
 	stampa("Distanza : %f\n",dist)
 ;
