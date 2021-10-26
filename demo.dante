@@ -1,4 +1,4 @@
-importa <math.h>
+importa libMatematica
 
 struttura
 @	decimale x
@@ -7,28 +7,22 @@ struttura
 punto
 
 funzione distanza(punto a, punto b)  restituisce decimale
-@	decimale x_inferiore, y_inferiore, z_inferiore
-@	decimale x_superiore, y_superiore, z_superiore
-@	decimale d_x, d_y, d_z
-@	x_inferiore = min(a.x,b.x)
-@	y_inferiore = min(a.y,b.y)
-@	z_inferiore = min(a.z,b.z)
-@	x_superiore = max(a.x,b.y)
-@	y_superiore = max(a.y,b.y)
-@	z_superiore = max(a.z,b.z)
-@	d_x = x_superiore - x_inferiore
-@	d_y = y_superiore - y_inferiore
-@	d_z = z_superiore - y_inferiore
-@	return sqrt(pow(d_x, 2)+pow(d_y, 2)+pow(d_z, 2))
+@	decimale d_x = a.x - b.x
+@	decimale d_y = a.y - a.y
+@	decimale d_z = a.z - b.z
+@	return rad2(eleva(d_x, 2)+eleva(d_y, 2)+eleva(d_z, 2))
 principale
 @	punto a,b
-@	a.x = 2
-@	a.y = 1
-@	a.z = 3
+@	stampa("\n A, x: ")
+@	leggi("%lf", &a.x)
+@	stampa("\nA, y: ")
+@	leggi("%lf", &a.y)
+@	stampa("\nA, z: ")
+@	leggi("%lf", &a.z)
 @	b.x = 5
 @	b.y = 10
 @	b.z = 7
 @	decimale dist = distanza(a,b)
-@   stampa("A=(%f,%f,%f)\n",a.x,a.y,a.z)
-@   stampa("B=(%f,%f,%f)\n",b.x,b.y,b.z)
+@	stampa("\nA=(%fl,%lf,%lf)\n",a.x,a.y,a.z)
+@	stampa("B=(%lf,%lf,%lf)\n",b.x,b.y,b.z)
 @	stampa("Distanza : %f\n",dist)
