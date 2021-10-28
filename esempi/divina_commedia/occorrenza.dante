@@ -1,0 +1,6 @@
+principale
+@	file dc = apriFile("DC.txt","r")
+@	testo a
+@	leggiRigaFile(dc,"%[^\n]s",a)
+@	stampa("%s",a)
+@	chiudiFile(dc)

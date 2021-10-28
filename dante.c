@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <ctype.h>
 char *replace(
     char const *const original,
     char const *const pattern,
@@ -137,25 +138,49 @@ char *strstrip(char *s)
 
     return s;
 }
-int main(void)
+int main(int argc, char * argv[])
 {
-    FILE *fp;
-    FILE *fo;
+    FILE *fp = NULL;
+    FILE *fo = NULL;
     char *line = NULL;
     size_t len = 0;
     ssize_t read;
     char **tokens;
+    char * inputfn;
+    int lastInput = 0, lastOutput = 0;
+    for(int i = 0; i < argc; i++){
+       if(lastInput){
+           inputfn = argv[i];
+           fp = fopen(argv[i],"r");
+           lastInput = 0;
+	}
+        if(lastOutput){
+            if (strcmp(argv[i],"stdout")==0) fo = stdout;
+            else fo = fopen(argv[i], "w+");
+            lastOutput = 0;
+        }
+       if(argv[i][0]=='-'){
+           if(argv[i][1]=='i') lastInput = 1;
+           else if(argv[i][1]=='o') lastOutput = 1;
+        }
+    }
 
-    fp = fopen("demo.dante", "r");
-    fo = fopen("out.c", "w+");
-    if (fp == NULL || fo == NULL)
-        exit(EXIT_FAILURE);
+    //fp = fopen("pvnrt.dante", "r");
+
+    if (fp == NULL){
+        printf("No input file");
+        exit(1);
+    }
+    if (fo == NULL){
+        fo = fopen(strcat(inputfn,".out.c"),"w");
+    }
+
 
     int prevAts = 0;
     FILE *head = fopen("dantehead.c","r");
-    char t = NULL;
+    char t;
     while((t = fgetc(head))!=EOF){
-       printf("%c", t);
+       fprintf(fo,"%c", t);
     }
     fclose(head);
     while ((read = getline(&line, &len, fp)) != -1)
@@ -166,11 +191,11 @@ int main(void)
         int ats = countats(copy);
         if (ats < prevAts)
         {
-            printf("}");
+            fprintf(fo,"}");
         }
         else if (ats > prevAts)
         {
-            printf("{");
+            fprintf(fo,"{");
         }
         prevAts = ats;
         if (strlen(strstrip(copy)) == 0)
@@ -198,6 +223,13 @@ int main(void)
                     newstr = replace(newstr, "se ", "if(");
                     strcat(strstrip(newstr), " )\n");
                 }
+                if (strstr(newstr, "caso") != NULL)
+                {
+                    addSemicolon = 0;
+                    newstr = replace(newstr, "caso", "case ");
+                    strcat(strstrip(newstr), " :");
+                }
+
                 if (strstr(newstr, "altrimenti ") != NULL)
                 {
                     addSemicolon = 0;
@@ -210,16 +242,25 @@ int main(void)
                     newstr = replace(newstr, "infine", "else(");
                     strcat(strstrip(newstr), " )\n");
                 }
+                if (strstr(newstr, "valuta ") != NULL)
+                {
+                    addSemicolon = 0;
+                    newstr = replace(newstr, "valuta", "switch(");
+                    strcat(strstrip(newstr), " )\n");
+                }
+
                 if (strstr(newstr, "funzione") != NULL)
                 {
                     addSemicolon = 0;
                     char **partsAB = str_split(line, ')');
                     *(partsAB + 1) = replace(*(partsAB + 1), "restituisce", "");
                     *(partsAB + 1) = replace(*(partsAB + 1), "intero", "int");
-                    *(partsAB + 1) = replace(*(partsAB + 1), "decimale", "int");
+                    *(partsAB + 1) = replace(*(partsAB + 1), "decimale", "double");
                     *(partsAB + 1) = replace(*(partsAB + 1), "testo", "char * ");
                     *(partsAB + 1) = replace(*(partsAB + 1), "carattere", "char");
-                    printf("%s", *(partsAB + 1));
+                    *(partsAB + 1) = replace(*(partsAB + 1), "vuoto", "void");
+                    *(partsAB + 1) = replace(*(partsAB + 1), "NULLA", "NULL");
+                    fprintf(fo,"%s", *(partsAB + 1));
                     newstr = strcat(*(partsAB + 0), ")");
                     newstr = replace(newstr, "funzione", "");
                 }
@@ -232,6 +273,8 @@ int main(void)
                 newstr = replace(newstr, "testo", "char * ");
                 newstr = replace(newstr, "carattere", "char");
                 newstr = replace(newstr, "struttura", "typedef struct");
+                newstr = replace(newstr, "vuoto", "void");
+                newstr = replace(newstr, "NULLA", "NULL");
                 if (strstr(newstr, "importa") != NULL)
                 {
                     addSemicolon = 0;
@@ -245,26 +288,27 @@ int main(void)
                 for (int i = 0; i < strlen(newstr); i++)
                 {
                     if (newstr[i] != '@')
-                        printf("%c", newstr[i]);
+                        fprintf(fo,"%c", newstr[i]);
                 }
             }
             else
             {
-                printf("\"%s\"", *(tokens + i));
+                fprintf(fo,"\"%s\"", *(tokens + i));
             }
             free(*(tokens + i));
         }
         if (addSemicolon)
-            printf(";");
-        printf("\n");
+            fprintf(fo,";");
+        fprintf(fo,"\n");
 
-        fprintf(fo, "%s", line);
+//        fprintf(fo, "%s", line);
     }
     for (int i = 0; i < prevAts; i++)
     {
-        printf("}\n");
+        fprintf(fo,"}\n");
     }
     fclose(fp);
+    fclose(fo);
     if (line)
         free(line);
     exit(EXIT_SUCCESS);

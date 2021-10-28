@@ -1,0 +1,79 @@
+importa Matematica
+
+costante decimale R = 8.3145 /*J*/;
+
+/*
+
+	Legge dei Gas Perfetti:
+	 PV = nRT
+
+*/
+
+funzione V_calc(decimale n, decimale T, decimale P) restituisce decimale
+@	restituisci n*R*T/P
+
+funzione P_calc(decimale n, decimale T, decimale V) restituisce decimale
+@       restituisci n*R*T/V
+
+funzione T_calc(decimale n, decimale V, decimale P) restituisce decimale
+@	restituisci P*V/(n*R)
+
+funzione n_calc(decimale V, decimale T, decimale P) restituisce decimale
+@	restituisci P*V/(R*T)
+
+
+funzione menu() restituisce booleano
+@	decimale P, V, n, T
+@	stampa("\nLegge dei Gas Perfetti\n Calcolatrice.\nCalcola\n 1. P (hPa)\n 2. V (m^3)\n 3. n (mol)\n 4. T (K)\n 5. Esci\n");
+@	intero scelta = 0
+@	scelta = leggiIntero()
+@	valuta scelta
+@       @       caso 1
+@       @               stampa("\nV (m^3) = ")
+@       @               V = leggiDecimale()
+@       @               stampa("\nn (mol) = ")
+@       @               n = leggiDecimale()
+@       @               stampa("\nT (K) = ")
+@       @               T = leggiDecimale()
+@       @               stampa("\nP = %decimale hPa  ", P_calc(n, T, V)) 
+@	@	fine
+@	@	caso 2
+@	@		stampa("\nP (hpa) = ")
+@	@	        P = leggiDecimale()
+@       @               stampa("\nn (mol) = ")
+@       @               n = leggiDecimale()
+@       @               stampa("\nT (K) = ")
+@       @               T = leggiDecimale()
+@	@		stampa("\nV = %lf m^3  ", V_calc(n, T, P))
+@	@	fine
+@       @       caso 3
+@       @               stampa("\nV (m^3) = ")
+@       @               V = leggiDecimale()
+@       @               stampa("\nP (hpa) = ")
+@       @               P = leggiDecimale()
+@       @               stampa("\nT (K) = ")
+@       @               T = leggiDecimale()
+@       @               stampa("\nn = %lf mol  ", n_calc(T, V, P))
+@	@	fine
+@       @       caso 4
+@       @               stampa("\nn (mol) = ")
+@       @               n = leggiDecimale()
+@       @               stampa("\nV (m^3) = ")
+@       @               V = leggiDecimale()
+@       @               stampa("\nP (hPa) = ")
+@       @               P = leggiDecimale()
+@       @               stampa("\nT = %lf K  ", T_calc(n, V, P))
+@	@	fine
+@	@	caso 5
+@	@		restituisci FALSO
+@	@	predefinito
+@	@		stampa("\nScelta non valida\n")
+@	@	fine
+@	restituisci VERO
+
+principale
+@	booleano continua = VERO
+@	finchè continua
+@	@	continua = menu()
+@
+

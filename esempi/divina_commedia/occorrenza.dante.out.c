@@ -26,6 +26,7 @@
 #define leggiCarattere _IleggiCarattere
 #define leggiParola _IleggiParola
 #define testoContiene strstr
+#define chiudiFile fclose
 char *replace(
     char const *const original,
     char const *const pattern,
@@ -119,4 +120,17 @@ char _IleggiCarattere(){
     char c;
     scanf("%c", &c);
     return c;
+}
+int main()
+
+{	file dc = apriFile("DC.txt","r")
+;
+	char *  a
+;
+	leggiRigaFile(dc,"%[^\n]s",a)
+;
+	stampa("%s",a)
+;
+	chiudiFile(dc)
+;
 }
