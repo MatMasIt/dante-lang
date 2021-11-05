@@ -1,0 +1,5 @@
+#!/bin/bash
+./dante -i $1
+gcc $1".out.c" -o $1".out" -lm
+./$1".out"
+rm -rf $1".out.c" $1".out"
