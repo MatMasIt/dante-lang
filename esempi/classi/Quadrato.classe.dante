@@ -1,0 +1,7 @@
+oggetto Quadrato figlio di Rettangolo
+    crea(decimale l)
+        Rettangolo(l, l)
+    eredita Rettangolo.base come lato
+    eredita Rettangolo.area()
+    eredita Rettangolo.perimetro()
+    eredita Rettangolo.diagonale()

@@ -1,29 +1,26 @@
-importa Matematica
-
-struttura
-@	decimale x
-@	decimale y
-@	decimale z
-punto
+oggetto punto
+    decimale x
+    decimale y
+    decimale z
 
 funzione distanza(punto a, punto b)  restituisce decimale
-@	decimale d_x = a.x - b.x
-@	decimale d_y = a.y - a.y
-@	decimale d_z = a.z - b.z
-@	restituisci rad2(eleva(d_x, 2)+eleva(d_y, 2)+eleva(d_z, 2))
+    decimale d_x = a.x - b.x
+    decimale d_y = a.y - a.y
+    decimale d_z = a.z - b.z
+    restituisci ((d_x^2)+(d_y^2)+(d_z^2))^(1/2)
 
-principale
-@	punto a, b
-@	stampa("\n A, x: ")
-@	a.x = leggiDecimale()
-@	stampa("\nA, y: ")
-@	a.y = leggiDecimale()
-@	stampa("\nA, z: ")
-@	a.z = leggiDecimale()
-@	b.x = 5
-@	b.y = 10
-@	b.z = 7
-@	decimale dist = distanza(a,b)
-@	stampa("\nA=(%decimale,%decimale,%decimale)\n",a.x,a.y,a.z)
-@	stampa("B=(%decimale,%decimale,%decimale)\n",b.x,b.y,b.z)
-@	stampa("Distanza : %f\n",dist)
+inizio
+    punto a, b
+    stampa("\n A, x: ")
+    a.x = decimale(leggi())
+    stampa("\nA, y: ")
+    a.y = decimale(leggi())
+    stampa("\nA, z: ")
+    a.z = decimale(leggi())
+    b.x = 5
+    b.y = 10
+    b.z = 7
+    decimale dist = distanza(a,b)
+    stampa("\nA=(%decimale,%decimale,%decimale)\n",a.x,a.y,a.z)
+    stampa("B=(%decimale,%decimale,%decimale)\n",b.x,b.y,b.z)
+    stampa("Distanza : %f\n",dist)

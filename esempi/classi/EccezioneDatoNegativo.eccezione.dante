@@ -1,0 +1,4 @@
+eccezione EccezioneDatoNegativo
+    testo messaggio
+    crea()
+        EccezioneDatoNegativo.messaggio = "Il dato non può essere negativo!"

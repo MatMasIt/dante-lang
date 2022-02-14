@@ -1,0 +1,10 @@
+inizio
+    stampa("Età? ")
+    intero a = intero(leggi())
+    se intero<14
+        stampa("\nBambino")
+    altrimenti intero<18
+        stampa("\nAdolescente")
+    infine
+        stampa("\nMaggiorenne")
+        

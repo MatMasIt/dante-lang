@@ -1,0 +1,12 @@
+importa Quadrato da "Quadrato.classe.dante"
+importa Rettangolo da "Rettangolo.classe.dante"
+importa EccezioneDatoNegativo da "EccezioneDatoNegativo.eccezione.dante"
+inizio
+    Quadrato q(2) #Quadrato di lato 2
+    Rettangolo a(2,4), b(3,5) #due rettangoli con base e altezza differenti
+    stampa(q.area())
+    stampa(a.perimetro())
+    prova
+        Rettangolo c(-1)
+    errore e
+        stampa(e)
