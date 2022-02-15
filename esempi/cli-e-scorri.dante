@@ -1,0 +1,9 @@
+principale argomenti
+    scorri argomenti come argomento
+        stampa(argomento)
+    scorri n in {1,11,3}
+        stampa(n)
+    scorri n in [5,10) unione [7,12]
+        stampa(n)
+    
+    

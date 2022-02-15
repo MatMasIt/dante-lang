@@ -3,11 +3,11 @@ importa Matematica
 costante decimale R = 8.3145 # J
 
 ##
-
 	Legge dei Gas Perfetti:
 	PV = nRT
-
 ##
+
+
 
 funzione V_calc(decimale n, decimale T, decimale P) restituisce decimale
 	restituisci n*R*T/P

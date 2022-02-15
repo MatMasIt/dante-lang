@@ -11,8 +11,8 @@ oggetto Rettangolo
     perimetro() restituisce decimale
         restituisci (Rettangolo.base + Rettangolo.altezza)*2
     pubblico diagonale() restituisce decimale
-        restituisci (Rettangolo.base^2+Rettangolo.altezza^2)^(1/2)
+        restituisci (Rettangolo.base^2 + Rettangolo.altezza^2)^(1/2)
     ristretto a() restituisce testo
         restituisci "Funzione chiamabile solo da dentro questa classe o da figli che la ereditano"
-    interno b() restituisce 
-        resituisce "Funzione chiamabile solo da dentro questa classe""
+    interno b() restituisce testo
+        resituisce "Funzione chiamabile solo da dentro questa classe"

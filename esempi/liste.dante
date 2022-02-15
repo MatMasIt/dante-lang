@@ -1,0 +1,7 @@
+inizio
+    a  = {1,11,13,18}
+    b = [1,11]
+    stampa(a unione b)
+    stampa(b intersezione a)
+    stampa(a - b)
+    stampa(b - a)

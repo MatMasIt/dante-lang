@@ -4,6 +4,7 @@
         "stdio.h": "c",
         "string.h": "c",
         "common.h": "c",
-        "tokens.h": "c"
+        "tokens.h": "c",
+        "syntaxtree.h": "c"
     }
 }

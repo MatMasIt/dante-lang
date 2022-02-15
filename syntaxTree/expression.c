@@ -6,34 +6,37 @@ typedef enum ExpressionElementType
     literal
 } ExpressionElementType;
 
-typedef union ExpressionElementValue{
-    FunctionCall * functionCall;
-    Expression * expression;
-    Variable * variable;
-    Literal  * literal;
+typedef union ExpressionElementValue
+{
+    FunctionCall *functionCall;
+    Expression *expression;
+    Variable *variable;
+    Literal *literal;
 } TokenValue;
 
 typedef enum ExpressionOperator
 {
     assign, // =
-    is, // è
-    isNot, // non è
-    not, // non
-    or, // o
-    and, // e
-    xor, // aut
-    morethan, // >
-    lessthan, // <
+    is,     // è
+    isNot,  // non è
+    not,    // non
+    or
+    ,          // o
+    and,       // e
+    xor,       // aut
+    morethan,  // >
+    lessthan,  // <
     moreequal, // >=
     lessequal, // <=
-    plus, // +
-    minus, // -
-    times, // *
-    division, // /
-    modulo// modulo
+    plus,      // +
+    minus,     // -
+    times,     // *
+    division,  // /
+    modulo     // modulo
 } ExpressionOperator;
 
-typedef struct ExpressionElement{
+typedef struct ExpressionElement
+{
     ExpressionOperator operator;
     ExpressionElementValue value;
 } ExpressionElement;

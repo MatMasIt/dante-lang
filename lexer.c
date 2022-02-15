@@ -65,7 +65,7 @@ int lex(FILE *file)
             parsingUnit[i - j] = line[i];
             if (strncmp(parsingUnit, MAIN_T, strlen(MAIN_T)) == 0)
             {
-                //alloc tr
+                // alloc tr
                 printf("MAIN");
                 foundToken = true;
             }

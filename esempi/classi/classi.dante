@@ -8,5 +8,5 @@ inizio
     stampa(a.perimetro())
     prova
         Rettangolo c(-1)
-    errore e
+    errore come e
         stampa(e)
