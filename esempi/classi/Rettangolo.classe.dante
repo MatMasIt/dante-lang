@@ -1,6 +1,6 @@
 oggetto Rettangolo
     decimale altezza
-    decimale base
+    pubblico decimale base #predefinto è pubblico
     crea(decimale a, decimale b)
         se a<0 o b>0
             lancia EccezioneDatoNegativo()
@@ -10,5 +10,9 @@ oggetto Rettangolo
         restituisci Rettangolo.base * Rettangolo.altezza
     perimetro() restituisce decimale
         restituisci (Rettangolo.base + Rettangolo.altezza)*2
-    diagonale() restituisce decimale
+    pubblico diagonale() restituisce decimale
         restituisci (Rettangolo.base^2+Rettangolo.altezza^2)^(1/2)
+    ristretto a() restituisce testo
+        restituisci "Funzione chiamabile solo da dentro questa classe o da figli che la ereditano"
+    interno b() restituisce 
+        resituisce "Funzione chiamabile solo da dentro questa classe""

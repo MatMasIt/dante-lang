@@ -1,0 +1,2 @@
+funzione divisibile(intero a, intero b predefinito 2) restituisce booleano
+	restituisci a modulo b è 0
