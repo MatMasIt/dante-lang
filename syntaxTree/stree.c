@@ -10,3 +10,7 @@ STree sTreeInit(Token token, Stree *parent){
     a.parent = parent;
     a.children = arraylist_new();
 }
+
+void sTreeAddChildren(Stree *this, Stree children){
+   arraylist_append(this,children);
+}

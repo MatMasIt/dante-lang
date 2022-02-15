@@ -4,7 +4,7 @@
 #include "utils/arraylist.c"
 #include "common.h"
 #include "tokens.h"
-#include "stree.c"
+#include "syntaxTree/syntaxTree.h"
 int lex(FILE *file)
 {
     flag inComment = false;
@@ -17,7 +17,9 @@ int lex(FILE *file)
         printf("Memory not allocated!!\n");
         return -2;
     }
-
+    Token rootToken;
+    rootToken.tokenType = rootT;
+    Stree init = sTreeInit(rootT, NULL);
     while (fgets(line, maxl, file))
     {
         while (line[strlen(line) - 1] != '\n' && line[strlen(line) - 1] != '\r')
@@ -58,10 +60,12 @@ int lex(FILE *file)
         flag foundToken = false;
         for (int i = 0; i < strlen(line); i++)
         {
+            Stree tr;
             foundToken = false;
             parsingUnit[i - j] = line[i];
             if (strncmp(parsingUnit, MAIN_T, strlen(MAIN_T)) == 0)
             {
+                //alloc tr
                 printf("MAIN");
                 foundToken = true;
             }

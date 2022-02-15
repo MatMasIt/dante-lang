@@ -12,7 +12,8 @@ typedef enum TokenType{
      fromT,
      funcT,
      retutnsT,
-     predefinedT
+     predefinedT,
+     rootT
 } TokenType;
 
 typedef union TokenValue{
