@@ -68,6 +68,6 @@ funzione menu() restituisce booleano
 
 inizio
 	booleano continua = VERO
-	finchè continua
+	finché continua
 		continua = menu()
 

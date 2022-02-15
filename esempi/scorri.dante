@@ -1,0 +1,9 @@
+inizio
+    scorri i a 10
+        stampa(i)
+    
+    scorri i da 5 a 10
+        stampa(i)
+
+    scorri i da 5 a 10 passo 2
+        stampa(i)
