@@ -6,10 +6,10 @@ typedef enum VariableType{
 }  VariableType;
 
 typedef union VariableValue{
-    int integer,
-    float decimal,
-    char * string,
-    void * object
+    int integer;
+    float decimal;
+    char * string;
+    void * object;
 } VariableValue;
 
 typedef struct Variable

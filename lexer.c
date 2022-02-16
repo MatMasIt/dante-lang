@@ -20,6 +20,8 @@ int lex(FILE *file)
     Token rootToken;
     rootToken.tokenType = rootT;
     Stree init = sTreeInit(rootT, NULL);
+    Stree * st;
+    Token to;
     while (fgets(line, maxl, file))
     {
         while (line[strlen(line) - 1] != '\n' && line[strlen(line) - 1] != '\r')
@@ -65,7 +67,8 @@ int lex(FILE *file)
             parsingUnit[i - j] = line[i];
             if (strncmp(parsingUnit, MAIN_T, strlen(MAIN_T)) == 0)
             {
-                // alloc tr
+                token.tokenType = mainT;
+                *st = sTreeInit(to,&init);
                 printf("MAIN");
                 foundToken = true;
             }

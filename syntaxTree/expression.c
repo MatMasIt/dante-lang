@@ -12,7 +12,7 @@ typedef union ExpressionElementValue
     Expression *expression;
     Variable *variable;
     Literal *literal;
-} TokenValue;
+} ExpressionElementValue;
 
 typedef enum ExpressionOperator
 {

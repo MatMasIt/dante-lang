@@ -23,6 +23,6 @@ typedef union TokenValue{
 } TokenValue;
 
 typedef struct Token{
-    TokeType tokenType;
+    TokenType tokenType;
     TokenValue tokenValue;
 } Token;
