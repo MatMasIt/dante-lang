@@ -1,8 +1,8 @@
 oggetto Rettangolo
     decimale altezza
     pubblico decimale base #predefinto è pubblico
-    crea(decimale a, decimale b)
-        se a<0 o b>0
+    crea(decimale a, decimale b) 
+        se a<0 o b<0
             lancia EccezioneDatoNegativo()
         Rettangolo.altezza = a
         Rettangolo.base = b

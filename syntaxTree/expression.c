@@ -1,3 +1,6 @@
+typedef struct FunctionCall FunctionCall;
+typedef struct Expression Expression;
+
 typedef enum ExpressionElementType
 {
     expression,
@@ -37,7 +40,7 @@ typedef enum ExpressionOperator
 
 typedef struct ExpressionElement
 {
-    ExpressionOperator operator;
+    ExpressionElementType type;
     ExpressionElementValue value;
 } ExpressionElement;
 

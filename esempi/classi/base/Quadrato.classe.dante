@@ -1,3 +1,4 @@
+#TODO implement  "figlio di" token in syntax highlighting
 oggetto Quadrato figlio di Rettangolo
     crea(decimale l)
         Rettangolo(l, l)

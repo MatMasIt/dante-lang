@@ -1,3 +1,4 @@
+// implemento stack per il controllo del type checking
 #include <stdio.h>
 #include <string.h>
 #include "utils/arraylist.h"
@@ -19,8 +20,8 @@ int lex(FILE *file)
     }
     Token rootToken;
     rootToken.tokenType = rootT;
-    Stree init = sTreeInit(rootT, NULL);
-    Stree * st;
+    Stree init = sTreeInit(rootToken, NULL);
+    Stree *st;
     Token to;
     while (fgets(line, maxl, file))
     {
@@ -67,8 +68,8 @@ int lex(FILE *file)
             parsingUnit[i - j] = line[i];
             if (strncmp(parsingUnit, MAIN_T, strlen(MAIN_T)) == 0)
             {
-                token.tokenType = mainT;
-                *st = sTreeInit(to,&init);
+                to.tokenType = mainT;
+                *st = sTreeInit(to, &init);
                 printf("MAIN");
                 foundToken = true;
             }
