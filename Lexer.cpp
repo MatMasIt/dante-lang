@@ -5,6 +5,7 @@
 #include <unistd.h>
 #endif
 #include "FileError.cpp"
+#include "StringUtils.cpp"
 class Lexer
 {
 public:
@@ -15,6 +16,13 @@ public:
             FileError fe(fn);
             throw fe;
         }
+        if (!StringUtils::endsWith(fn, ".dante"))
+            Logger::warning("L'estensione del file specificato non coincide con \".dante\"");
         std::ifstream input(fn);
+        std::string temp;
+        for (std::string line; getline(input, line);)
+        {
+            std::cout << line << std::endl; // add chars and compare to dict
+        }
     }
 };

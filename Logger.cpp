@@ -17,4 +17,11 @@ public:
         rlutil::setColor(rlutil::WHITE);
         std::cerr << message << std::endl;
     }
+    static void warning(std::string message)
+    {
+        rlutil::setColor(rlutil::YELLOW);
+        std::cerr << "Avvertimento: ";
+        rlutil::setColor(rlutil::WHITE);
+        std::cerr << message << std::endl;
+    }
 };
