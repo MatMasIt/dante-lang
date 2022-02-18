@@ -1,9 +1,0 @@
-#include "variable.c"
-#include "expression.c"
-#include "functionCall.c"
-#include "for.c"
-#include "if.c"
-#include "object.c"
-#include "token.c";
-#include "while.c"
-#include "stree.c"

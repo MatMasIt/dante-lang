@@ -1,5 +1,0 @@
-typedef struct Object{
-    
-} Object;
-
-
