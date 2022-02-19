@@ -7,3 +7,5 @@ valgrind:
          --verbose \
          --log-file=valgrind-out.txt \
          ./dante l
+gdb:
+	gdb -ex=r --args dante esempi/se.dante

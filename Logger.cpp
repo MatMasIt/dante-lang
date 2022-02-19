@@ -24,4 +24,11 @@ public:
         rlutil::setColor(rlutil::WHITE);
         std::cerr << message << std::endl;
     }
+    static void debug(std::string message)
+    {
+        rlutil::setColor(rlutil::GREEN);
+        std::cerr << "Debug: ";
+        rlutil::setColor(rlutil::WHITE);
+        std::cerr << message << std::endl;
+    }
 };

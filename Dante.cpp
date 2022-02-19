@@ -59,6 +59,11 @@ int main(int argc, char *argv[], char *envp[])
         Logger::error("Il file  \"" + std::string(ex.what()) + "\" non esiste o non è accessibile");
         return 1;
     }
+    catch (TabulationError &ex)
+    {
+        Logger::error(std::string(ex.what()));
+        return 1;
+    }
     d.execute();
     return 0;
 }

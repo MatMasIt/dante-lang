@@ -23,10 +23,11 @@ public:
     {
         children.at(pos) = syntaxTreeNode;
     }
-    SyntaxTreeNode *addChild(Token t)
+    SyntaxTreeNode *addChild(int t)
     {
         SyntaxTreeNode *stn = new SyntaxTreeNode();
         stn->parent = this;
+        stn->token = t;
         children.push_back(stn);
         return stn;
     }

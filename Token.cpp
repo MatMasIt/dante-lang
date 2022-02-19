@@ -2,6 +2,7 @@
 #define SyntaxToken int
 class Token
 {
+public:
     enum type
     {
         inizio,
@@ -31,7 +32,9 @@ class Token
         valuta,
         caso,
         predefinito,
-        lancia
+        lancia,
+        assegna,
+        intero
     };
     SyntaxToken matches(std::string token)
     {
@@ -93,5 +96,10 @@ class Token
             return type::predefinito;
         if (token.compare("lancia") == 0)
             return type::lancia;
+        if (token.compare("=") == 0)
+            return type::assegna;
+        if (token.compare("intero") == 0)
+            return type::intero;
+        return -1;
     }
 };
