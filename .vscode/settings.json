@@ -52,6 +52,9 @@
         "typeinfo": "cpp",
         "iostream": "cpp",
         "map": "cpp",
-        "ctime": "cpp"
+        "ctime": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "thread": "cpp"
     }
 }
