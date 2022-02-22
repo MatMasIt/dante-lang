@@ -91,10 +91,12 @@ public:
     }
     static inline std::string durationToHuman(std::chrono::high_resolution_clock::time_point start, std::chrono::high_resolution_clock::time_point stop)
     {
+        /*
         int duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
         int seconds = duration / 1000000;
         duration -= seconds * 1000000;
         int seconds = duration / 1000000;
         duration -= seconds * 1000000;
+        */
     }
 };

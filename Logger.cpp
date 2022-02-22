@@ -1,34 +1,21 @@
-
-#include "rlutil.h"
 class Logger
 {
 public:
     static void error(std::string message)
     {
-        rlutil::setColor(rlutil::RED);
-        std::cerr << "Errore: ";
-        rlutil::setColor(rlutil::WHITE);
-        std::cerr << message << std::endl;
+        fmt::print("{}: {} \n", format(fmt::emphasis::bold | fg(fmt::color::red), "Errore"), message);
     }
     static void info(std::string message)
     {
-        rlutil::setColor(rlutil::BLUE);
-        std::cerr << "Info: ";
-        rlutil::setColor(rlutil::WHITE);
-        std::cerr << message << std::endl;
+        fmt::print("{}: {} \n", format(fmt::emphasis::bold | fg(fmt::color::blue), "Info"), message);
     }
     static void warning(std::string message)
     {
-        rlutil::setColor(rlutil::YELLOW);
-        std::cerr << "Avvertimento: ";
-        rlutil::setColor(rlutil::WHITE);
-        std::cerr << message << std::endl;
+        fmt::print("{}: {} \n", format(fmt::emphasis::bold | fg(fmt::color::orange), "Avvertimento"),  message);
     }
     static void debug(std::string message)
     {
-        rlutil::setColor(rlutil::GREEN);
-        std::cerr << "Debug: ";
-        rlutil::setColor(rlutil::WHITE);
-        std::cerr << message << std::endl;
+        fmt::print("{}: {} \n", format(fmt::emphasis::bold | fg(fmt::color::magenta), "Interno"),  message);
+
     }
 };

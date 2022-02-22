@@ -1,11 +1,11 @@
 #include <iostream>
 #include <chrono>
-#include <thread>
-#include "Logger.cpp"
 #include <fstream>
 #include <vector>
 #include <string>
 #include <exception>
+#include "portability.cpp"
+#include "Logger.cpp"
 #include "SyntaxTreeNode.cpp"
 #include "Lexer.cpp"
 #include "Executer.cpp"
@@ -25,12 +25,12 @@ public:
         for (std::vector<std::string>::iterator t = fileNameList.begin(); t != fileNameList.end(); ++t)
         {
             auto start = std::chrono::high_resolution_clock::now();
-            std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+            //std::this_thread::sleep_for(std::chrono::milliseconds(10000));
 
             mainSyntaxTreeList.push_back(lexE.lexFile(*t));
             auto stop = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
-            Logger::debug(*t + std::string(",a nalisi lessicale: ") + std::to_string(duration.count()) + std::string("μs"));
+            Logger::debug(*t + std::string(", analisi lessicale: ") + std::to_string(duration.count()) + std::string("μs"));
         }
     }
     void execute()
