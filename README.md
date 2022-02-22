@@ -19,8 +19,15 @@ _Dante_ is a python-like interpreted programming language which uses the italian
 
 _Caronte_ is the C++ implementation of the interpreter
 
+---
+
+![](https://i.imgur.com/N4FZehW.png)
+There is a [syntax highlighting extension for Visual Studio Code](https://github.com/MatMasIt/dante-sintassi)
+
+È disponibile [una estensione per evidenziare la sintassi di Dante su Visual Studio Code](https://github.com/MatMasIt/dante-sintassi)
 
 
 
+---
 
 See [the language convention](LANGUAGE-CONVENTION.md) for conventions on language
