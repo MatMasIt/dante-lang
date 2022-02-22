@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Feb 20 14:24:45 2022
+# Make data base, printed on Tue Feb 22 17:18:55 2022
 
 # Variables
 
@@ -77,7 +77,7 @@ PATH = /home/mattia/.local/bin:/opt/devkitpro/tools/bin:/home/mattia/.cargo/bin:
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/regolite:@/tmp/.ICE-unix/5516,unix/regolite:/tmp/.ICE-unix/5516
+SESSION_MANAGER = local/regolite:@/tmp/.ICE-unix/3897,unix/regolite:/tmp/.ICE-unix/3897
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # default
@@ -97,7 +97,7 @@ XDG_SESSION_DESKTOP = regolith
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5783
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4177
 # automatic
 %F = $(notdir $%)
 # environment
@@ -109,7 +109,7 @@ PWD = /home/mattia/dante-lang
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 5592
+SSH_AGENT_PID = 3973
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = Regolith:GNOME-Flashback:GNOME
 # environment
@@ -149,7 +149,7 @@ DEVKITARM = /opt/devkitpro/devkitARM
 # environment
 SHLVL = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-efa4595c-e325-4a89-a74d-80cd969b5e03.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fd4306a5-960e-4092-bd4c-9dc84099da29.sock
 # environment
 COMPIZ_CONFIG_PROFILE = gnome-flashback
 # default
@@ -167,7 +167,7 @@ XDG_CURRENT_DESKTOP = Regolith:GNOME-Flashback:GNOME
 # environment
 LC_TELEPHONE = it_IT.UTF-8
 # environment
-I3SOCK = /run/user/1000/i3/ipc-socket.5841
+I3SOCK = /run/user/1000/i3/ipc-socket.4238
 # default
 MAKE_COMMAND := make
 # default
@@ -193,7 +193,7 @@ LC_PAPER = it_IT.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
 # environment
-DESKTOP_AUTOSTART_ID = 1093dfe9043d32876164535233517243600000055160016
+DESKTOP_AUTOSTART_ID = 10bfc8c68716c53948164553863350455300000038970016
 # environment
 DEFAULTS_PATH = /usr/share/gconf/regolith.default.path
 # default
@@ -227,7 +227,7 @@ LC_ADDRESS = it_IT.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 416926
+VSCODE_PID = 75741
 # variable set hash-table stats:
 # Load=109/1024=11%, Rehash=0, Collisions=21/137=15%
 
@@ -278,9 +278,9 @@ all:
 # automatic
 # ? := 
 # variable set hash-table stats:
- 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'Makefile', line 2):
+ 
 	g++ Dante.cpp -o dante -g
 
 # Not a target:
@@ -328,6 +328,6 @@ valgrind:
 # strcache performance: lookups = 41 / hit rate = 21%
 # hash-table stats:
 # Load=32/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Sun Feb 20 14:24:45 2022
+# Finished Make data base on Tue Feb 22 17:18:55 2022
 
  
