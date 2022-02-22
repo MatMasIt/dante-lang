@@ -1,7 +1,17 @@
+/**
+ * @file StringUtils.cpp
+ * @brief Utilities for string analysis
+ *
+ * @copyright 2022, GPL-3.0
+ */
 #include <algorithm>
 #include <functional>
 #include <cctype>
 #include <locale>
+/**
+ * @brief Utilities for string analysis
+ *
+ */
 class StringUtils
 {
 public:

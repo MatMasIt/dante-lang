@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Feb 22 17:18:55 2022
+# Make data base, printed on Tue Feb 22 19:44:55 2022
 
 # Variables
 
@@ -46,8 +46,8 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 _ = /usr/share/code/code
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-regolith:/etc/xdg
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST :=  Makefile
+# makefile (from '.env', line 1)
+MAKEFILE_LIST :=  Makefile .env
 # automatic
 @F = $(notdir $@)
 # environment
@@ -125,7 +125,7 @@ VSCODE_CODE_CACHE_PATH = /home/mattia/.config/Code/CachedData/d6ee99e4c045a6716e
 # environment
 LOGNAME = mattia
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
 # environment
@@ -148,18 +148,21 @@ QT_IM_MODULE = ibus
 DEVKITARM = /opt/devkitpro/devkitARM
 # environment
 SHLVL = 1
+# makefile (from '.env', line 1)
+TESTFILE = esempi/se.dante
 # environment
 VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fd4306a5-960e-4092-bd4c-9dc84099da29.sock
 # environment
 COMPIZ_CONFIG_PROFILE = gnome-flashback
+ 
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = mattia
 # environment
 LC_MONETARY = it_IT.UTF-8
-# makefile
-.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 2)
+.DEFAULT_GOAL := help
 # environment
 XDG_CURRENT_DESKTOP = Regolith:GNOME-Flashback:GNOME
 # automatic
@@ -229,7 +232,7 @@ LANG = C
 # environment
 VSCODE_PID = 75741
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=21/137=15%
+# Load=110/1024=11%, Rehash=0, Collisions=22/140=16%
 
 # Pattern-specific Variable Values
 
@@ -237,9 +240,9 @@ VSCODE_PID = 75741
 
 # Directories
 
-# . (device 2066, inode 5392424): 25 files, no impossibilities.
+# . (device 2066, inode 5392424): 29 files, no impossibilities.
 
-# 25 files, no impossibilities in 1 directories.
+# 29 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -247,12 +250,19 @@ VSCODE_PID = 75741
 
 # Files
 
+wine:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 31):
+	wine64 ./bin/dante64.exe "${TESTFILE}"
+
 gdb:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 11):
-	gdb -ex=r --args dante esempi/se.dante
+#  recipe to execute (from 'Makefile', line 27):
+	gdb -ex=r --args ./bin/dante.o "${TESTFILE}"
 
 all:
 #  Command line target.
@@ -279,9 +289,29 @@ all:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from 'Makefile', line 2):
- 
-	g++ Dante.cpp -o dante -g
+#  recipe to execute (from 'Makefile', line 9):
+	make bin
+
+bin:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 11):
+	make linux
+	make windows
+
+.PHONY: help
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+windows:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 14):
+	mkdir -p bin
+	x86_64-w64-mingw32-gcc-win32 Dante.cpp -o bin/dante64.exe -static -lstdc++
 
 # Not a target:
 .SUFFIXES:
@@ -292,9 +322,32 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-02-19 16:23:00.948126489
+#  Last modified 2022-02-22 19:36:28.260550603
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+.env:
+#  Implicit rule search has been done.
+#  Last modified 2022-02-22 19:11:06.326969456
+#  File has been updated.
+#  Successfully updated.
+
+help:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 33):
+	@echo "The Dante Interpreter"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' Makefile | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+linr:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 29):
+	./bin/dante.o "${TESTFILE}"
 
 # Not a target:
 .DEFAULT:
@@ -302,32 +355,40 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+linux:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	mkdir -p bin
+	g++ Dante.cpp -o bin/dante.o -g
+
 valgrind:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 4):
+#  recipe to execute (from 'Makefile', line 20):
 	valgrind --leak-check=full \
          --show-leak-kinds=all \
          --track-origins=yes \
          --verbose \
          --log-file=valgrind-out.txt \
-         ./dante l
+         ./bin/dante.o "${TESTFILE}"
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/18=0%
+# Load=14/1024=1%, Rehash=0, Collisions=0/29=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 350 B / avg = 10 B
-# current buf: size = 8162 B / used = 350 B / count = 32 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 42 / storage = 440 B / avg = 10 B
+# current buf: size = 8162 B / used = 440 B / count = 42 / avg = 10 B
 
-# strcache performance: lookups = 41 / hit rate = 21%
+# strcache performance: lookups = 62 / hit rate = 32%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Tue Feb 22 17:18:55 2022
+# Load=42/8192=1%, Rehash=0, Collisions=1/62=2%
+# Finished Make data base on Tue Feb 22 19:44:55 2022
 
  

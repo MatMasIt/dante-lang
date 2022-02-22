@@ -1,3 +1,9 @@
+/**
+ * @file portability.cpp
+ * @brief Contains code necessary to make Dante portable
+ *
+ * @copyright 2022, GPL-3.0
+ */
 #ifdef _WIN32
 #include <io.h>
 #define access _access_s

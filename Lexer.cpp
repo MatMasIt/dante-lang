@@ -1,9 +1,23 @@
+/**
+ * @file Lexer.cpp
+ * @brief Lex a file into a syntax tree
+ *
+ * @copyright 2022, GPL-3.0
+ */
 #include "FileError.cpp"
-#include "TabulationError.cpp"
+#include "IndentationErrror.cpp"
 #include "StringUtils.cpp"
 class Lexer
 {
 public:
+    /**
+     * @brief lex file and return SyntaxTree Node
+     *
+     * @param fn filename
+     * @return SyntaxTreeNode
+     * @throws FileError Could not access file
+     * @throws IndentationErrror Somebody messed up the indentation
+     */
     SyntaxTreeNode lexFile(std::string fn)
     {
         if (!access(fn.c_str(), 0) == 0)
@@ -26,7 +40,7 @@ public:
 
             if (StringUtils::countOccurrenceAtStart(line, '\t') != 0)
             {
-                TabulationError te(std::string("Il file \"") + fn + std::string("\" a riga ") + std::to_string(lineN + 1) + std::string(" contiene caratteri di tabulazione per indentare il codice:\n è permesso solo usare 4 spazi per ogni livello di indentazione logica."));
+                IndentationErrror te(std::string("Il file \"") + fn + std::string("\" a riga ") + std::to_string(lineN + 1) + std::string(" contiene caratteri di tabulazione per indentare il codice:\n è permesso solo usare 4 spazi per ogni livello di indentazione logica."));
                 throw te;
             }
             spaceCount = StringUtils::countOccurrenceAtStart(line, ' ');

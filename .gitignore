@@ -1,2 +1,3 @@
 bin/
 valgrind-out.txt
+.env

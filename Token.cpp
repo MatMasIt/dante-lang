@@ -1,8 +1,19 @@
+
+/**
+ * @file Token.cpp
+ * @brief Token types
+ *
+ * @copyright 2022, GPL-3.0
+ */
 #include <string>
 #define SyntaxToken int
 class Token
 {
 public:
+    /**
+     * @brief Type of token
+     *
+     */
     enum type
     {
         inizio,
@@ -36,6 +47,12 @@ public:
         assegna,
         intero
     };
+    /**
+     * @brief Match a text representation to its relative Token
+     *
+     * @param token
+     * @return SyntaxToken
+     */
     SyntaxToken matches(std::string token)
     {
         if (token.compare("inizio") == 0)

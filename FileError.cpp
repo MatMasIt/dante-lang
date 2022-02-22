@@ -1,3 +1,15 @@
+
+/**
+ * @file FileError.cpp
+ * @brief File access error
+ *
+ * @copyright 2022, GPL-3.0
+ */
+
+/**
+ * @brief File access error exception
+ *
+ */
 struct FileError : public std::exception
 {
 public:
