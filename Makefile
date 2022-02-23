@@ -15,7 +15,7 @@ all: ## Makes all binaries
 	@make -s bin
 bin: ## Make linux and windows binaries
 	@date +%s%N | cut -b1-13 > .timebin
-	@printf $(NC)"Compiling"$(BLUE)" all targets"$(NC)"...\n"
+	@printf $(NC)"Compiling"$(BLUE)" all targets"$(NC)"...\n"| ts '[%Y-%m-%d %H:%M:%S]'
 	@make -s linux64
 	@make -s linux32
 	@make -s linuxstatic64
@@ -67,7 +67,7 @@ linuxstatic64: ## Make static linux 64 bit binary
 	@date +%s%N | cut -b1-13 > .timepart
 	@mkdir -p bin
 	@printf "Compiling"$(BLUE)" linux64 (static)\n"$(NC)
-	@g++ Dante.cpp -m64 -o bin/dante.static64.o -g -static > bin/linuxstatic64.log 2>&1 && \
+	@g++ Dante.cpp -m64 -o bin/dante64.static.o -g -static > bin/linuxstatic64.log 2>&1 && \
 	printf $(GREEN)"Compiled successfully "$(NC)"in " && \
 	echo "scale=3;$$(($$(date +%s%N | cut -b1-13)-$$(cat .timepart))) / 1000" | bc -l | xargs -I {} echo {} "s" && \
 	rm .timepart || \
@@ -76,7 +76,7 @@ linuxstatic32: ## Make static linux 32 bit binary
 	@date +%s%N | cut -b1-13 > .timepart
 	@mkdir -p bin
 	@printf "Compiling"$(BLUE)" linux32 (static)\n"$(NC)
-	@g++ Dante.cpp -m32 -o bin/dante.static32.o -g -static > bin/linuxstatic32.log 2>&1 && \
+	@g++ Dante.cpp -m32 -o bin/dante32.static.o -g -static > bin/linuxstatic32.log 2>&1 && \
 	printf $(GREEN)"Compiled successfully "$(NC)"in " && \
 	echo "scale=3;$$(($$(date +%s%N | cut -b1-13)-$$(cat .timepart))) / 1000" | bc -l | xargs -I {} echo {} "s" && \
 	rm .timepart || \
