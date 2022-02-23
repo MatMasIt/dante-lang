@@ -8,7 +8,7 @@
  * loro accennando, tutte le raccoglie;
  * batte col remo qualunque s’adagia”
  *
- * Dante, Infero, Canto III versi 109-111
+ * Dante, Inferno, Canto III versi 109-111
  */
 #include <iostream>
 #include <chrono>
