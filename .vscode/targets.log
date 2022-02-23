@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Feb 22 19:44:55 2022
+# Make data base, printed on Wed Feb 23 19:12:14 2022
 
 # Variables
 
@@ -77,7 +77,7 @@ PATH = /home/mattia/.local/bin:/opt/devkitpro/tools/bin:/home/mattia/.cargo/bin:
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/regolite:@/tmp/.ICE-unix/3897,unix/regolite:/tmp/.ICE-unix/3897
+SESSION_MANAGER = local/regolite:@/tmp/.ICE-unix/3849,unix/regolite:/tmp/.ICE-unix/3849
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # default
@@ -97,7 +97,7 @@ XDG_SESSION_DESKTOP = regolith
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4177
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4124
 # automatic
 %F = $(notdir $%)
 # environment
@@ -109,7 +109,7 @@ PWD = /home/mattia/dante-lang
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 3973
+SSH_AGENT_PID = 3925
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = Regolith:GNOME-Flashback:GNOME
 # environment
@@ -125,7 +125,7 @@ VSCODE_CODE_CACHE_PATH = /home/mattia/.config/Code/CachedData/d6ee99e4c045a6716e
 # environment
 LOGNAME = mattia
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
@@ -151,10 +151,9 @@ SHLVL = 1
 # makefile (from '.env', line 1)
 TESTFILE = esempi/se.dante
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fd4306a5-960e-4092-bd4c-9dc84099da29.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8394d416-1d42-4bad-8642-c2f7de3d30cc.sock
 # environment
 COMPIZ_CONFIG_PROFILE = gnome-flashback
- 
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -170,7 +169,7 @@ XDG_CURRENT_DESKTOP = Regolith:GNOME-Flashback:GNOME
 # environment
 LC_TELEPHONE = it_IT.UTF-8
 # environment
-I3SOCK = /run/user/1000/i3/ipc-socket.4238
+I3SOCK = /run/user/1000/i3/ipc-socket.4182
 # default
 MAKE_COMMAND := make
 # default
@@ -196,7 +195,7 @@ LC_PAPER = it_IT.UTF-8
 # environment
 QT_ACCESSIBILITY = 1
 # environment
-DESKTOP_AUTOSTART_ID = 10bfc8c68716c53948164553863350455300000038970016
+DESKTOP_AUTOSTART_ID = 106476dc06cf370374164563714090516700000038490016
 # environment
 DEFAULTS_PATH = /usr/share/gconf/regolith.default.path
 # default
@@ -230,7 +229,7 @@ LC_ADDRESS = it_IT.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 75741
+VSCODE_PID = 31603
 # variable set hash-table stats:
 # Load=110/1024=11%, Rehash=0, Collisions=22/140=16%
 
@@ -240,9 +239,9 @@ VSCODE_PID = 75741
 
 # Directories
 
-# . (device 2066, inode 5392424): 29 files, no impossibilities.
+# . (device 2066, inode 5392424): 30 files, no impossibilities.
 
-# 29 files, no impossibilities in 1 directories.
+# 30 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -278,6 +277,7 @@ all:
 # automatic
 # * := 
 # automatic
+ 
 # + := 
 # automatic
 # | := 
@@ -383,12 +383,12 @@ valgrind:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 42 / storage = 440 B / avg = 10 B
-# current buf: size = 8162 B / used = 440 B / count = 42 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 43 / storage = 457 B / avg = 10 B
+# current buf: size = 8162 B / used = 457 B / count = 43 / avg = 10 B
 
-# strcache performance: lookups = 62 / hit rate = 32%
+# strcache performance: lookups = 63 / hit rate = 31%
 # hash-table stats:
-# Load=42/8192=1%, Rehash=0, Collisions=1/62=2%
-# Finished Make data base on Tue Feb 22 19:44:55 2022
+# Load=43/8192=1%, Rehash=0, Collisions=1/63=2%
+# Finished Make data base on Wed Feb 23 19:12:14 2022
 
  
