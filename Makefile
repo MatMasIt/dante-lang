@@ -20,19 +20,19 @@ endif
 setup: ## Prepare all dependencies
 	@printf $(NC)"Installing dependencies for"$(BLUE)" "$(OS)" "$(NC)"...\n" | ts '[%Y-%m-%d %H:%M:%S]'
 ifeq ($(OS), $(shell echo "Ubuntu"))
-	$(RP) apt install gcc gcc-multilib g++-multilib mingw-w64 valgrind
+	$(RP) apt install gcc gcc-multilib g++-multilib mingw-w64 valgrind moreutils
 else ifeq ($(OS),"Debian")
-	$(RP) apt install gcc gcc-multilib g++-multilib mingw-w64 valgrind
+	$(RP) apt install gcc gcc-multilib g++-multilib mingw-w64 valgrind moreutils
 else ifeq ($(OS),"Arch")
-	$(RP) pacman -S gcc mingw-w64-gcc valgrind
+	$(RP) pacman -S gcc mingw-w64-gcc valgrind moreutils
 else ifeq ($(OS),"Artix")
-	$(RP) pacman -S gcc mingw-w64-gcc valgrindendif
+	$(RP) pacman -S gcc mingw-w64-gcc valgrind moreutils
 else ifeq ($(OS),"Fedora")
-	$(RP) yum install gcc gcc-c++ mingw64-gcc mingw32-cpp mingw64-cpp mingw32-gcc valgrind
+	$(RP) yum install gcc gcc-c++ mingw64-gcc mingw32-cpp mingw64-cpp mingw32-gcc valgrind moreutils
 else ifeq ($(OS),"Void")
-	$(RP) xbps-install gcc gcc-c++ cross-i686-w64-mingw32 cross-x86_64-w64-mingw32 valgrind
+	$(RP) xbps-install gcc gcc-c++ cross-i686-w64-mingw32 cross-x86_64-w64-mingw32 valgrind moreutils
 else ifeq ($(OS),"Gentoo")
-	$(RP) emerge-pb sys-devel/gcc sys-devel/crossdev dev-util/valgrind
+	$(RP) emerge-pb sys-devel/gcc sys-devel/crossdev dev-util/valgrind moreutils
 endif
 all: ## Makes all binaries
 	@make -s bin
