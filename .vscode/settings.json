@@ -55,6 +55,7 @@
         "ctime": "cpp",
         "chrono": "cpp",
         "ratio": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "malloc.h": "c"
     }
 }
