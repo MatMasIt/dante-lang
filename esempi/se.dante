@@ -1,6 +1,6 @@
 inizio
     stampa("Età? ")
-    intero a = intero(leggi())
+    intero a = leggiIntero()
     se intero<14
         stampa("\nBambino")
     altrimenti intero<18

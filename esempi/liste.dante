@@ -1,7 +1,7 @@
 inizio
-    a  = {1,11,13,18}
-    b = [1,11]
-    stampa(a unione b)
-    stampa(b intersezione a)
-    stampa(a - b)
-    stampa(b - a)
+    a  = lista(1, 11, 13, 18)
+    b = intervalloIntero(1, 11)
+    c = unione(a, b)
+    d = intersezione(b, a)
+    e = differenza(a, b)
+    f = differenza(b, a)

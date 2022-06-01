@@ -1,5 +1,3 @@
-importa Matematica
-
 costante decimale R = 8.3145 # J
 
 ##
@@ -25,40 +23,40 @@ funzione n_calc(decimale V, decimale T, decimale P) restituisce decimale
 funzione menu() restituisce booleano
 	decimale P, V, n, T
 	stampa("\nLegge dei Gas Perfetti\n Calcolatrice.\nCalcola\n 1. P (hPa)\n 2. V (m^3)\n 3. n (mol)\n 4. T (K)\n 5. Esci\n");
-	intero scelta = 0
-	scelta = intero(leggi())
+	intero scelta
+	scelta = leggiIntero()
 	valuta scelta
 		caso 1
 			stampa("\nV (m^3) = ")
-			V = decimale(leggi())
+			V = leggiDecimale()
 			stampa("\nn (mol) = ")
-			n = decimale(leggi())
+			n = leggiDecimale()
 			stampa("\nT (K) = ")
-			T = decimale(leggi())
+			T = leggiDecimale()
 			stampa("\nP = %decimale hPa  ", P_calc(n, T, V)) 
 		caso 2
 			stampa("\nP (hpa) = ")
-			P = decimale(leggi())
+			P = leggiDecimale()
 			stampa("\nn (mol) = ")
-			n = decimale(leggi())
+			n = leggiDecimale()
 			stampa("\nT (K) = ")
-			T = decimale(leggi())
-			stampa("\nV = %lf m^3  ", V_calc(n, T, P))
+			T = leggiDecimale()
+			stampa("\nV = %decimale m^3  ", V_calc(n, T, P))
 		caso 3
 			stampa("\nV (m^3) = ")
-			V = decimale(leggi())
+			V = leggiDecimale()
 			stampa("\nP (hpa) = ")
-			P = decimale(leggi())
+			P = leggiDecimale()
 			stampa("\nT (K) = ")
-			T = decimale(leggi())
-			stampa("\nn = %lf mol  ", n_calc(T, V, P))
+			T = leggiDecimale()
+			stampa("\nn = %ldecimale mol  ", n_calc(T, V, P))
 		caso 4
 			stampa("\nn (mol) = ")
-			n = decimale(leggi())
+			n = leggiDecimale()
 			stampa("\nV (m^3) = ")
-			V = decimale(leggi())
+			V = leggiDecimale()
 			stampa("\nP (hPa) = ")
-			P = decimale(leggi())
+			P = leggiDecimale()
 			stampa("\nT = %lf K  ", T_calc(n, V, P))
 		caso 5
 			restituisci FALSO

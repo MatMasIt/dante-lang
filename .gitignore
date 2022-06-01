@@ -1,3 +1,4 @@
 bin/
 valgrind-out.txt
 .env
+.vscode

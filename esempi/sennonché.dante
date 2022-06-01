@@ -1,5 +1,5 @@
 inizio
     x = 1
     a = 2
-    x = x + 2 sennonché a>0
+    x = x + 2 sennonché a > 0
     stampa(x)

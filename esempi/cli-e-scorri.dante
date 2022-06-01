@@ -1,9 +1,9 @@
 inizio argomenti
     scorri argomenti come argomento
         stampa(argomento)
-    scorri n in {1,11,3}
+    a = lista(1, 2, 4)
+    scorri i in a
         stampa(n)
-    scorri n in [5,10) unione [7,12]
-        stampa(n)
-    
-    
+    r = intervalloIntero(1, 3)
+    scorri n in r
+        stampa(n)    
